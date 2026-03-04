@@ -25,9 +25,9 @@ module tt_um_dec3to8 (
 
 	always @(posedge clk) begin
     if (!rst_n)
-        uo_out = 8'b0;
+        uo_out <= 8'b0;
     else
-        uo_out = 8'b1 << ui_in;
+		uo_out <= 8'b1 << ui_in[2:0];
 end
 
 endmodule
