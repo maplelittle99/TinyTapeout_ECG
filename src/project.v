@@ -5,11 +5,12 @@
 
 module tt_um_dec4to16 (
     input  wire        rst_n,
+	input  wire        clk,
 	input  wire [3:0]  ui,
 	output reg  [15:0] dec_out,
 );
 
-always @(*) begin
+	always @(posedge clk) begin
     if (!rst_n)
         dec_out = 16'b0;
     else
